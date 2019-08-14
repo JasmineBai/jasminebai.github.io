@@ -64,7 +64,7 @@
 <meta property="og:url" content="https://www.jmbai.com/tags/index.html">
 <meta property="og:site_name" content="Take a note">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-10T16:20:08.612Z">
+<meta property="og:updated_time" content="2019-08-13T15:59:05.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="标签">
   <link rel="canonical" href="https://www.jmbai.com/tags/">
@@ -338,9 +338,9 @@
     <a href="/">
       <img class="site-author-image" itemprop="image"
         src="/images/avatar.jpg"
-        alt="Jm Bai">
+        alt="J.Bai">
     </a>
-  <p class="site-author-name" itemprop="name">Jm Bai</p>
+  <p class="site-author-name" itemprop="name">J.Bai</p>
   <div class="site-description motion-element" itemprop="description"></div>
 </div>
   <nav class="site-state motion-element">
@@ -387,7 +387,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Jm Bai</span>
+  <span class="author" itemprop="copyrightHolder">J.Bai</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
@@ -477,12 +477,10 @@
         .done(function({ results }) {
           if (results.length > 0) {
             var counter = results[0];
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
             
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
               .fail(function ({ responseJSON }) {
                 console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
               })
